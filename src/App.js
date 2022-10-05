@@ -1,9 +1,5 @@
-import { useRef, useState, Fragment, createElement } from 'react';
+import { useState } from 'react';
 import './App.css';
-
-function createMarkup(value) {
-    return { __html: '<strong>' + value + '</strong>' };
-}
 
 const HILIGHT_TEXT_AFTER_CHAR = 5;
 
@@ -46,7 +42,6 @@ function App() {
     const [input, setInput] = useState('');
     const [list, setList] = useState([]);
     const onKey = (e) => {
-        console.log('vbotxi ', e);
         if (e.key === 'Enter' || e.code === 'Enter' || e.keyCode === 13) {
             setList([...list, e.target.value]);
             setInput('');
